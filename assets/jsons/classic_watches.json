@@ -1,0 +1,122 @@
+[
+  {
+    "id": "0",
+    "name": "سیتیزن",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/0.png","assets/images/watch0.png"
+    ],
+    "oldPrice": "1,391,175 تومان",
+    "price": "1,320,001 تومان",
+    "description": "ساعت سیتیزن با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک سیتیزن"
+  },
+  {
+    "id": "1",
+    "name": "سیکو",
+    "category": "کلاسیک",
+    "oldPrice": "735,297 تومان",
+    "imageUrl": [
+      "assets/images/product_card_images/1.png","assets/images/watch1.png"
+    ],
+    "price": "1,106,246 تومان",
+    "description": "ساعت سیکو با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک سیکو"
+  },
+  {
+    "id": "2",
+    "name": "کاسیو",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/2.png","assets/images/watch2.png"
+    ],
+    "oldPrice": "663,421 تومان",
+    "price": "1,179,070 تومان",
+    "description": "ساعت کاسیو با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک کاسیو"
+  },
+  {
+    "id": "3",
+    "name": "اوریانت",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/3.png","assets/images/watch3.png"
+    ],
+    "oldPrice": "1,431,581 تومان",
+    "price": "682,632 تومان",
+    "description": "ساعت اوریانت با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک اوریانت"
+  },
+  {
+    "id": "4",
+    "name": "تایم‌مستر",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/4.png","assets/images/watch4.png"
+    ],
+    "oldPrice": "1,286,085 تومان",
+    "price": "1,118,213 تومان",
+    "description": "ساعت تایم‌مستر با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک تایم‌مستر"
+  },
+  {
+    "id": "5",
+    "name": "رومانسون",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/5.png","assets/images/watch5.png"
+    ],
+    "oldPrice": "532,344 تومان",
+    "price": "1,408,300 تومان",
+    "description": "ساعت رومانسون با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک رومانسون"
+  },
+  {
+    "id": "6",
+    "name": "بولوا",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/0.png","assets/images/watch6.png"
+    ],
+    "oldPrice": "1,124,389 تومان",
+    "price": "1,088,892 تومان",
+    "description": "ساعت بولوا با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک بولوا"
+  },
+  {
+    "id": "7",
+    "name": "تایتان",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/1.png","assets/images/watch7.png"
+    ],
+    "oldPrice": "1,403,933 تومان",
+    "price": "1,001,363 تومان",
+    "description": "ساعت تایتان با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک تایتان"
+  },
+  {
+    "id": "8",
+    "name": "اینویکتا",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/2.png","assets/images/watch8.png"
+    ],
+    "oldPrice": "1,354,568 تومان",
+    "price": "999,224 تومان",
+    "description": "ساعت اینویکتا با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک اینویکتا"
+  },
+  {
+    "id": "9",
+    "name": "دنیل ولینگتون",
+    "category": "کلاسیک",
+    "imageUrl": [
+      "assets/images/product_card_images/3.png","assets/images/watch9.png"
+    ],
+    "oldPrice": "1,390,636 تومان",
+    "price": "865,377 تومان",
+    "description": "ساعت دنیل ولینگتون با طراحی اصیل و کلاسیک، مناسب برای استایل‌های رسمی و روزمره. ترکیبی از زیبایی و دقت در هر ثانیه.",
+    "title": "ساعت مچی کلاسیک دنیل ولینگتون"
+  }
+]

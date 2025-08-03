@@ -7,6 +7,7 @@ import 'package:watch_sales_app/views/ui/home_page.dart';
 import 'package:watch_sales_app/views/ui/mainscreen.dart';
 import 'package:watch_sales_app/views/ui/profile.dart';
 import 'package:watch_sales_app/views/ui/search_page.dart';
+import 'package:watch_sales_app/views/ui/show_more_page.dart';
 import 'package:watch_sales_app/views/ui/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
               '/profile': (context) => const ProfileScreen(),
               '/cart': (context) => const CartScreen(),
               '/search': (context) => const SearchScreen(),
+              '/showMore': (context) => const ShowMore(),
             },
             theme: ThemeData(
               scaffoldBackgroundColor: Color(0xFFE2E2E2),

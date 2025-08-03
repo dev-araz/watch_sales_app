@@ -1,0 +1,102 @@
+[
+  {
+    "id": "20",
+    "name": "شیائومی واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/0.png", "assets/images/smart_watch/6.png"],
+    "oldPrice": "1,033,992 تومان",
+    "price": "560,147 تومان",
+    "description": "ساعت هوشمند شیائومی با طراحی ساده و امکاناتی مانند پایش سلامت و شمارش قدم‌ها، گزینه‌ای مناسب برای استفاده روزمره است.",
+    "title": "ساعت هوشمند شیائومی واچ"
+  },
+  {
+    "id": "21",
+    "name": "گارمین",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/1.png", "assets/images/smart_watch/5.png"],
+    "oldPrice": "805,987 تومان",
+    "price": "1,152,774 تومان",
+    "description": "ساعت هوشمند گارمین با قابلیت‌هایی مانند GPS حرفه‌ای و پایش فعالیت‌های ورزشی، انتخابی ایده‌آل برای ورزشکاران است.",
+    "title": "ساعت هوشمند گارمین"
+  },
+  {
+    "id": "22",
+    "name": "اپل واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/2.png", "assets/images/smart_watch/4.png"],
+    "oldPrice": "1,410,487 تومان",
+    "price": "946,858 تومان",
+    "description": "اپل واچ با طراحی زیبا و امکاناتی چون پایش سلامت، تماس و اعلان‌ها، یکی از کامل‌ترین ساعت‌های هوشمند بازار است.",
+    "title": "ساعت هوشمند اپل واچ"
+  },
+  {
+    "id": "23",
+    "name": "فسیل جن",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/3.png", "assets/images/smart_watch/3.png"],
+    "oldPrice": "803,224 تومان",
+    "price": "697,691 تومان",
+    "description": "ساعت هوشمند فسیل جن با طراحی کلاسیک و پشتیبانی از سیستم‌عامل اندروید، انتخابی شیک و کاربردی است.",
+    "title": "ساعت هوشمند فسیل جن"
+  },
+  {
+    "id": "24",
+    "name": "گلکسی واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/4.png", "assets/images/smart_watch/2.png"],
+    "oldPrice": "1,399,273 تومان",
+    "price": "758,580 تومان",
+    "description": "سامسونگ گلکسی واچ با طراحی مدرن، نمایشگر با کیفیت و امکانات پیشرفته، برای زندگی دیجیتال طراحی شده است.",
+    "title": "ساعت هوشمند سامسونگ گلکسی واچ"
+  },
+  {
+    "id": "25",
+    "name": "ریلمی واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/5.png", "assets/images/smart_watch/1.png"],
+    "oldPrice": "592,283 تومان",
+    "price": "709,085 تومان",
+    "description": "ساعت هوشمند ریلمی با طراحی سبک و قیمت مناسب، برای پایش فعالیت‌های روزانه و دریافت اعلان‌ها بسیار کاربردی است.",
+    "title": "ساعت هوشمند ریلمی واچ"
+  },
+  {
+    "id": "26",
+    "name": "فیت‌بیت",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/6.png", "assets/images/smart_watch/0.png"],
+    "oldPrice": "1,265,146 تومان",
+    "price": "1,305,861 تومان",
+    "description": "فیت‌بیت با تمرکز بر تناسب اندام، تحلیل خواب و پایش سلامت، انتخابی عالی برای سبک زندگی سالم است.",
+    "title": "ساعت هوشمند فیت‌بیت"
+  },
+  {
+    "id": "27",
+    "name": "آمازفیت",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/0.png", "assets/images/smart_watch/6.png"],
+    "oldPrice": "1,409,229 تومان",
+    "price": "1,086,206 تومان",
+    "description": "ساعت هوشمند آمازفیت با طراحی زیبا، باتری قدرتمند و قابلیت‌های پایش فعالیت، تجربه‌ای حرفه‌ای ارائه می‌دهد.",
+    "title": "ساعت هوشمند آمازفیت"
+  },
+  {
+    "id": "28",
+    "name": "وان‌پلاس واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/1.png", "assets/images/smart_watch/5.png"],
+    "oldPrice": "547,184 تومان",
+    "price": "569,752 تومان",
+    "description": "وان‌پلاس واچ با هماهنگی عالی با گوشی‌های وان‌پلاس، طراحی مدرن و امکانات هوشمند، تجربه‌ای روان و حرفه‌ای دارد.",
+    "title": "ساعت هوشمند وان‌پلاس واچ"
+  },
+  {
+    "id": "29",
+    "name": "هوآوی واچ",
+    "category": "هوشمند",
+    "imageUrl": ["assets/images/smart_watch/2.png", "assets/images/smart_watch/4.png"],
+    "oldPrice": "1,163,457 تومان",
+    "price": "919,818 تومان",
+    "description": "هوآوی واچ با کیفیت ساخت بالا، عملکرد روان و امکانات کامل برای پایش سلامت، یکی از گزینه‌های محبوب کاربران است.",
+    "title": "ساعت هوشمند هوآوی واچ"
+  }
+]

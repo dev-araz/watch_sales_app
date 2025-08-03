@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:watch_sales_app/controllers/main_screen_provider.dart';
 import 'package:watch_sales_app/views/shared/bottom_nav_bar.dart';

@@ -43,6 +43,7 @@ dependencies:
     sdk: flutter
   ionicons: ^0.2.2
   material_design_icons_flutter: ^7.0.7296
+  flutter_staggered_grid_view: ^0.7.0
 
 dev_dependencies:
   flutter_test:
@@ -70,7 +71,44 @@ flutter:
   assets:
     - assets/rive/splash.riv
     - assets/rive/appBar.riv
-    - assets/images/appbar.png
+    - assets/images/watch0.png
+    - assets/images/watch1.png
+    - assets/images/watch2.png
+    - assets/images/watch3.png
+    - assets/images/watch4.png
+    - assets/images/watch5.png
+    - assets/images/watch6.png
+    - assets/images/watch7.png
+    - assets/images/watch8.png
+    - assets/images/watch9.png
+    - assets/images/product_card_images/0.png
+    - assets/images/product_card_images/1.png
+    - assets/images/product_card_images/2.png
+    - assets/images/product_card_images/3.png
+    - assets/images/product_card_images/4.png
+    - assets/images/product_card_images/5.png
+    - assets/images/women_watch/0.png
+    - assets/images/women_watch/1.png
+    - assets/images/women_watch/2.png
+    - assets/images/women_watch/3.png
+    - assets/images/women_watch/4.png
+    - assets/images/women_watch/5.png
+    - assets/images/smart_watch/0.png
+    - assets/images/smart_watch/1.png
+    - assets/images/smart_watch/2.png
+    - assets/images/smart_watch/3.png
+    - assets/images/smart_watch/4.png
+    - assets/images/smart_watch/5.png
+    - assets/images/smart_watch/6.png
+    - assets/jsons/classic_watches.json
+    - assets/jsons/women_watches.json
+    - assets/jsons/sport_watches.json
+    - assets/images/brands/0.png
+    - assets/images/brands/1.png
+    - assets/images/brands/2.png
+    - assets/images/brands/3.png
+    - assets/images/brands/4.png
+    - assets/images/brands/5.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
