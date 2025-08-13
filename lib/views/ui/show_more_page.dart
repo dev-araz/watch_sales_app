@@ -11,15 +11,15 @@ import 'package:watch_sales_app/views/shared/custom_spacer.dart';
 import 'package:watch_sales_app/views/shared/latest_views_widget.dart';
 
 class ShowMore extends StatefulWidget {
-  const ShowMore({super.key});
-
+  const ShowMore({super.key, required this.tabIndex});
+  final int tabIndex;
   @override
   State<ShowMore> createState() => _ShowMoreState();
 }
 
 class _ShowMoreState extends State<ShowMore> with TickerProviderStateMixin {
   Future<dynamic> filter() {
-    double _value = 100;
+    double value = 100;
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -94,13 +94,13 @@ class _ShowMoreState extends State<ShowMore> with TickerProviderStateMixin {
                     style: myFontStyle(16.sp, Colors.black, FontWeight.w400),
                   ),
                   Slider(
-                      value: _value,
+                      value: value,
                       activeColor: Colors.black,
                       inactiveColor: Colors.grey,
                       thumbColor: Colors.black,
                       max: 1000,
                       divisions: 10,
-                      label: _value.round().toString(),
+                      label: value.round().toString(),
                       secondaryTrackValue: 500,
                       onChanged: (double value) {}),
                   const CustomSpacer(),
@@ -145,8 +145,6 @@ class _ShowMoreState extends State<ShowMore> with TickerProviderStateMixin {
     );
   }
 
-  // late final TabController tabController =
-  //     TabController(length: 3, vsync: this);
   late TabController _tabController;
 
   late Future<List<Welcome>> _classicWatches;

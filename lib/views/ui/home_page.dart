@@ -105,11 +105,20 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                       controller: tabController,
                       children: [
                         // First Tab
-                        HomeTabBarViewWidget(classicWatches: _classicWatches),
+                        HomeTabBarViewWidget(
+                          classicWatches: _classicWatches,
+                          tabIndex: 0,
+                        ),
                         // Second Tab
-                        HomeTabBarViewWidget(classicWatches: _womenWatches),
+                        HomeTabBarViewWidget(
+                          classicWatches: _womenWatches,
+                          tabIndex: 1,
+                        ),
                         // Third Tab
-                        HomeTabBarViewWidget(classicWatches: _sportWatches),
+                        HomeTabBarViewWidget(
+                          classicWatches: _sportWatches,
+                          tabIndex: 2,
+                        ),
                       ],
                     ),
                   ),

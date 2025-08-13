@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:watch_sales_app/controllers/main_screen_provider.dart';
+import 'package:watch_sales_app/controllers/product_provider.dart';
 import 'package:watch_sales_app/views/ui/cart_page.dart';
 import 'package:watch_sales_app/views/ui/home_page.dart';
 import 'package:watch_sales_app/views/ui/mainscreen.dart';
 import 'package:watch_sales_app/views/ui/profile.dart';
 import 'package:watch_sales_app/views/ui/search_page.dart';
-import 'package:watch_sales_app/views/ui/show_more_page.dart';
+// import 'package:watch_sales_app/views/ui/show_more_page.dart';
 import 'package:watch_sales_app/views/ui/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox('cart_box');
+  await Hive.openBox('fav_box');
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -21,7 +27,10 @@ void main() {
     ),
   );
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (context) => MainScreenNotifier())
+    ChangeNotifierProvider(create: (context) => MainScreenNotifier()),
+    ChangeNotifierProvider(
+      create: (context) => ProductNotifier(),
+    )
   ], child: const MyApp()));
 }
 
@@ -43,7 +52,7 @@ class MyApp extends StatelessWidget {
               '/profile': (context) => const ProfileScreen(),
               '/cart': (context) => const CartScreen(),
               '/search': (context) => const SearchScreen(),
-              '/showMore': (context) => const ShowMore(),
+              // '/showMore': (context) => const ShowMore(tabIndex: tabIndex),
             },
             theme: ThemeData(
               scaffoldBackgroundColor: Color(0xFFE2E2E2),
