@@ -57,11 +57,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 "assets/rive/appBar.riv",
                 fit: BoxFit.fill,
               ),
-
-              // decoration: const BoxDecoration(
-              //     image: DecorationImage(
-              //         image: AssetImage("assets/images/appbar.png"),
-              //         fit: BoxFit.cover)),
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 import 'package:watch_sales_app/controllers/product_provider.dart';
-// import 'package:watch_sales_app/main.dart';
+import 'package:watch_sales_app/models/constants.dart';
 import 'package:watch_sales_app/models/welcome_model.dart';
 import 'package:watch_sales_app/services/helper.dart';
 import 'package:watch_sales_app/views/shared/app_style.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:watch_sales_app/views/shared/checkout_button.dart';
+import 'package:watch_sales_app/views/ui/favorites.dart';
 
 class ProductPage extends StatefulWidget {
   const ProductPage({super.key, required this.id, required this.category});
@@ -20,8 +22,11 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
+  final _cartBox = Hive.box('cart_box');
+  final _favBox = Hive.box('fav_box');
   final PageController pageController = PageController();
   late Future<Welcome> _watches;
+
   List<String> brand = [
     "assets/images/brands/5.png",
     "assets/images/brands/4.png",
@@ -30,6 +35,14 @@ class _ProductPageState extends State<ProductPage> {
     "assets/images/brands/0.png",
     "assets/images/brands/2.png",
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    getWatches();
+    getFavorites(); // ✅ بارگذاری اولیه علاقه‌مندی‌ها
+  }
+
   void getWatches() {
     if (widget.category == 'کلاسیک') {
       _watches = Helper().getClassicId(widget.id);
@@ -40,10 +53,27 @@ class _ProductPageState extends State<ProductPage> {
     }
   }
 
-  @override
-  void initState() {
-    super.initState();
-    getWatches();
+  Future<void> _createCart(Map<String, dynamic> newCart) async {
+    await _cartBox.add(newCart);
+  }
+
+  Future<void> _createFav(Map<String, dynamic> addFav) async {
+    await _favBox.add(addFav);
+    getFavorites();
+  }
+
+  getFavorites() {
+    final favData = _favBox.keys.map((key) {
+      final item = _favBox.get(key);
+      return {
+        "key": key,
+        "id": item["id"], // ✅ مقدار واقعی id
+      };
+    }).toList();
+
+    favor = favData.toList();
+    ids = favor.map((item) => item['id'].toString()).toList(); // ✅ یکدست‌سازی
+    setState(() {});
   }
 
   @override
@@ -53,13 +83,16 @@ class _ProductPageState extends State<ProductPage> {
           future: _watches,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               return Text('Error ${snapshot.error}');
             } else {
               final watches = snapshot.data;
               return Consumer<ProductNotifier>(
                   builder: (context, productNotifier, child) {
+                final isFav =
+                    ids.contains(watches!.id.toString()); // ✅ بررسی درست
+
                 return CustomScrollView(
                   slivers: [
                     SliverAppBar(
@@ -95,73 +128,92 @@ class _ProductPageState extends State<ProductPage> {
                               height: MediaQuery.of(context).size.height * 0.5,
                               width: double.infinity,
                               child: PageView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: watches!.imageUrl.length,
-                                  controller: pageController,
-                                  onPageChanged: (Page) {
-                                    productNotifier.activePage = Page;
-                                  },
-                                  itemBuilder: (context, int index) {
-                                    return Stack(
-                                      children: [
-                                        Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.4,
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          color: Colors.white70,
-                                          child: Image.asset(
-                                            watches.imageUrl[index],
-                                            fit: BoxFit.contain,
-                                          ),
+                                scrollDirection: Axis.horizontal,
+                                itemCount: watches.imageUrl.length,
+                                controller: pageController,
+                                onPageChanged: (Page) {
+                                  productNotifier.activePage = Page;
+                                },
+                                itemBuilder: (context, int index) {
+                                  return Stack(
+                                    children: [
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.4,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        color: Colors.white70,
+                                        child: Image.asset(
+                                          watches.imageUrl[index],
+                                          fit: BoxFit.contain,
                                         ),
-                                        Positioned(
-                                          top: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.09,
-                                          right: 20.w,
+                                      ),
+                                      Positioned(
+                                        top:
+                                            MediaQuery.of(context).size.height *
+                                                0.09,
+                                        right: 20.w,
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            if (isFav) {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      const FavoritesPage(),
+                                                ),
+                                              );
+                                            } else {
+                                              _createFav({
+                                                "id": watches.id,
+                                                "name": watches.name,
+                                                "category": watches.category,
+                                                "price": watches.price,
+                                                "imageUrl": watches.imageUrl[1]
+                                              });
+                                            }
+                                          },
                                           child: Icon(
-                                            Ionicons.heart_outline,
-                                            color: Colors.grey,
+                                            isFav
+                                                ? Ionicons.heart
+                                                : Ionicons.heart_outline,
+                                            color: Colors.black,
                                             size: 22.sp,
                                           ),
                                         ),
-                                        Positioned(
-                                            bottom: 0.h,
-                                            right: 0.w,
-                                            left: 0.w,
-                                            top: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
+                                      ),
+                                      Positioned(
+                                        bottom: 0.h,
+                                        right: 0.w,
+                                        left: 0.w,
+                                        top:
+                                            MediaQuery.of(context).size.height *
                                                 0.26,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: List<Widget>.generate(
-                                                  watches.imageUrl.length,
-                                                  (index) => Padding(
-                                                        padding: EdgeInsets
-                                                            .symmetric(
-                                                                horizontal:
-                                                                    4.w),
-                                                        child: CircleAvatar(
-                                                          radius: 5.r,
-                                                          backgroundColor:
-                                                              productNotifier
-                                                                          .activepage !=
-                                                                      index
-                                                                  ? Colors.grey
-                                                                  : Colors
-                                                                      .black,
-                                                        ),
-                                                      )),
-                                            )),
-                                      ],
-                                    );
-                                  }),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: List<Widget>.generate(
+                                            watches.imageUrl.length,
+                                            (index) => Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 4.w),
+                                              child: CircleAvatar(
+                                                radius: 5.r,
+                                                backgroundColor: productNotifier
+                                                            .activepage !=
+                                                        index
+                                                    ? Colors.grey
+                                                    : Colors.black,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
                             Positioned(
                               top: 270.h,
@@ -367,7 +419,50 @@ class _ProductPageState extends State<ProductPage> {
                                           child: Padding(
                                             padding: EdgeInsets.only(top: 12.h),
                                             child: CheckoutButton(
-                                                onTab: () {},
+                                                onTab: () async {
+                                                  _createCart({
+                                                    "id": watches.id,
+                                                    "name": watches.name,
+                                                    "category":
+                                                        watches.category,
+                                                    "price": watches.price,
+                                                    "imageUrl":
+                                                        watches.imageUrl[1],
+                                                  });
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        "به سبد خرید اضافه شد ✅",
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        style: myFontStyle(
+                                                            13,
+                                                            Colors.black,
+                                                            FontWeight.w600),
+                                                      ),
+                                                      backgroundColor:
+                                                          Colors.white,
+                                                      behavior: SnackBarBehavior
+                                                          .floating,
+                                                      margin: EdgeInsets.symmetric(
+                                                          horizontal: 50.w,
+                                                          vertical: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.4),
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(16),
+                                                      ),
+                                                      duration:
+                                                          Duration(seconds: 2),
+                                                    ),
+                                                  );
+                                                },
                                                 label:
                                                     "اضافه کردن به سبد خرید"),
                                           ),

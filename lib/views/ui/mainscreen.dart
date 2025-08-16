@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:watch_sales_app/controllers/main_screen_provider.dart';
 import 'package:watch_sales_app/views/shared/bottom_nav_bar.dart';
-import 'package:watch_sales_app/views/ui/cart_page.dart';
+import 'package:watch_sales_app/views/ui/cart.dart';
+import 'package:watch_sales_app/views/ui/favorites.dart';
+// import 'package:watch_sales_app/views/ui/cart_page.dart';
 import 'package:watch_sales_app/views/ui/home_page.dart';
 import 'package:watch_sales_app/views/ui/profile.dart';
 import 'package:watch_sales_app/views/ui/search_page.dart';
@@ -13,8 +15,8 @@ class MainScreen extends StatelessWidget {
   List<Widget> pageList = [
     HomeScreen(),
     SearchScreen(),
-    HomeScreen(),
-    CartScreen(),
+    FavoritesPage(),
+    CartPage(),
     ProfileScreen(),
   ];
 
