@@ -152,7 +152,7 @@ class _ProductPageState extends State<ProductPage> {
                                       Positioned(
                                         top:
                                             MediaQuery.of(context).size.height *
-                                                0.09,
+                                                0.35,
                                         right: 20.w,
                                         child: GestureDetector(
                                           onTap: () {
@@ -220,8 +220,8 @@ class _ProductPageState extends State<ProductPage> {
                               bottom: 1.h,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(29.r),
-                                  topRight: Radius.circular(29.r),
+                                  topLeft: Radius.circular(0.r),
+                                  topRight: Radius.circular(0.r),
                                 ),
                                 child: Container(
                                   height:
@@ -236,7 +236,7 @@ class _ProductPageState extends State<ProductPage> {
                                       children: [
                                         Text(
                                           watches.name,
-                                          style: myFontStyle(33.sp,
+                                          style: myFontStyle(23.sp,
                                               Colors.black, FontWeight.w800),
                                         ),
                                         SizedBox(
@@ -246,7 +246,7 @@ class _ProductPageState extends State<ProductPage> {
                                           children: [
                                             Text(
                                               watches.category,
-                                              style: myFontStyle(19.sp,
+                                              style: myFontStyle(14.sp,
                                                   Colors.grey, FontWeight.w400),
                                             ),
                                             SizedBox(
@@ -399,8 +399,8 @@ class _ProductPageState extends State<ProductPage> {
                                               0.8,
                                           child: Text(
                                             watches.title,
-                                            style: myFontStyle(19, Colors.black,
-                                                FontWeight.w800),
+                                            style: myFontStyle(19.sp,
+                                                Colors.black, FontWeight.w800),
                                           ),
                                         ),
                                         SizedBox(
@@ -408,65 +408,60 @@ class _ProductPageState extends State<ProductPage> {
                                         ),
                                         Text(
                                           watches.description,
-                                          style: myFontStyle(14, Colors.black,
-                                              FontWeight.w400),
+                                          style: myFontStyle(14.sp,
+                                              Colors.black, FontWeight.w400),
                                         ),
                                         SizedBox(
                                           height: 9.h,
                                         ),
                                         Align(
                                           alignment: Alignment.bottomCenter,
-                                          child: Padding(
-                                            padding: EdgeInsets.only(top: 12.h),
-                                            child: CheckoutButton(
-                                                onTab: () async {
-                                                  _createCart({
-                                                    "id": watches.id,
-                                                    "name": watches.name,
-                                                    "category":
-                                                        watches.category,
-                                                    "price": watches.price,
-                                                    "imageUrl":
-                                                        watches.imageUrl[1],
-                                                  });
-                                                  ScaffoldMessenger.of(context)
-                                                      .showSnackBar(
-                                                    SnackBar(
-                                                      content: Text(
-                                                        "به سبد خرید اضافه شد ✅",
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        style: myFontStyle(
-                                                            13,
-                                                            Colors.black,
-                                                            FontWeight.w600),
-                                                      ),
-                                                      backgroundColor:
-                                                          Colors.white,
-                                                      behavior: SnackBarBehavior
-                                                          .floating,
-                                                      margin: EdgeInsets.symmetric(
-                                                          horizontal: 50.w,
-                                                          vertical: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .height *
-                                                              0.4),
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(16),
-                                                      ),
-                                                      duration:
-                                                          Duration(seconds: 2),
+                                          child: CheckoutButton(
+                                              onTab: () async {
+                                                _createCart({
+                                                  "id": watches.id,
+                                                  "name": watches.name,
+                                                  "category": watches.category,
+                                                  "price": watches.price,
+                                                  "imageUrl":
+                                                      watches.imageUrl[1],
+                                                });
+                                                ScaffoldMessenger.of(context)
+                                                    .showSnackBar(
+                                                  SnackBar(
+                                                    content: Text(
+                                                      "به سبد خرید اضافه شد ✅",
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: myFontStyle(
+                                                          13,
+                                                          Colors.black,
+                                                          FontWeight.w600),
                                                     ),
-                                                  );
-                                                },
-                                                label:
-                                                    "اضافه کردن به سبد خرید"),
-                                          ),
-                                        )
+                                                    backgroundColor:
+                                                        Colors.white,
+                                                    behavior: SnackBarBehavior
+                                                        .floating,
+                                                    margin: EdgeInsets.symmetric(
+                                                        horizontal: 50.w,
+                                                        vertical: MediaQuery.of(
+                                                                    context)
+                                                                .size
+                                                                .height *
+                                                            0.4),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16),
+                                                    ),
+                                                    duration:
+                                                        Duration(seconds: 2),
+                                                  ),
+                                                );
+                                              },
+                                              label: "اضافه کردن به سبد خرید"),
+                                        ),
                                       ],
                                     ),
                                   ),

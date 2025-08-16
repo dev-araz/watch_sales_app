@@ -127,9 +127,11 @@ class _ProductCardState extends State<ProductCard> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(widget.name,
-                        style: myFontStyle(33, Colors.black, FontWeight.w800)),
+                        style:
+                            myFontStyle(23.sp, Colors.black, FontWeight.w800)),
                     Text(widget.category,
-                        style: myFontStyle(19, Colors.grey, FontWeight.w400)),
+                        style:
+                            myFontStyle(13.sp, Colors.grey, FontWeight.w400)),
                   ],
                 ),
               ),
@@ -139,19 +141,25 @@ class _ProductCardState extends State<ProductCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(widget.price,
-                        style: myFontStyle(15, Colors.black, FontWeight.w800)),
+                        style:
+                            myFontStyle(13.sp, Colors.black, FontWeight.w800)),
                     Row(
                       children: [
                         Text('رنگ‌ها',
-                            style:
-                                myFontStyle(14, Colors.grey, FontWeight.w300)),
-                        SizedBox(width: 5.w),
-                        ChoiceChip(
-                          labelPadding: const EdgeInsets.fromLTRB(1, 0, 3, 0),
-                          label: const Text(''),
-                          selected: selected,
-                          visualDensity: VisualDensity.compact,
-                          selectedColor: Colors.black,
+                            style: myFontStyle(
+                                11.sp, Colors.grey, FontWeight.w300)),
+                        SizedBox(width: 9.w),
+                        SizedBox(
+                          height: 11.h,
+                          width: 13.w,
+                          child: ChoiceChip(
+                            labelPadding: const EdgeInsets.fromLTRB(1, 0, 3, 0),
+                            label: const Text(''),
+                            selected: selected,
+                            visualDensity: VisualDensity.compact,
+                            showCheckmark: false,
+                            selectedColor: Colors.black,
+                          ),
                         )
                       ],
                     )

@@ -12,7 +12,6 @@ class IncrementDecrementProvider extends ChangeNotifier {
 
   void decrement() {
     if (_count > 1) {
-      // نذاریم صفر یا منفی بشه
       _count--;
       notifyListeners();
     }
